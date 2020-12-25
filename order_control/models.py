@@ -7,6 +7,9 @@ from phone_field import PhoneField
 class UserType(models.Model):
     name = models.CharField(max_length=10)
 
+    def __str__(self):
+        return self.name
+
 
 class User(models.Model):
     name = models.CharField(max_length=50)
