@@ -29,3 +29,15 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class OrderDetail(models.Model):
+    quantity = models.IntegerField()
+    price = models.FloatField()
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+
+
+class Order(models.Model):
+    date = models.DateField(auto_now=True)
+    total_price = models.FloatField()
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
