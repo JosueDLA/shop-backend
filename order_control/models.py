@@ -17,8 +17,15 @@ class User(models.Model):
     phone = PhoneField(blank=True, help_text='Contact phone number')
     user_type = models.ForeignKey(UserType, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.name
+
 
 class Product(models.Model):
     name = models.CharField(max_length=50)
     price = models.FloatField()
     stock = models.IntegerField()
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
