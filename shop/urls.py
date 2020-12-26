@@ -22,6 +22,7 @@ router = routers.DefaultRouter()
 router.register(r'user-type', views.UserTypeViewSet)
 router.register(r'user', views.UserViewSet)
 router.register(r'product', views.ProductViewSet)
+router.register(r'order-detail', views.OrderDetailViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
