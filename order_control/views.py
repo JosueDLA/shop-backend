@@ -8,6 +8,7 @@ from .serializers import UserSerializer
 from .serializers import UserTypeSerializer
 from .serializers import ProductSerializer
 from .serializers import OrderDetailSerializer
+from .serializers import OrderSerializer
 
 # Create your views here.
 
@@ -33,4 +34,10 @@ class ProductViewSet(viewsets.ModelViewSet):
 class OrderDetailViewSet(viewsets.ModelViewSet):
     queryset = OrderDetail.objects.all().order_by('quantity')
     serializer_class = OrderDetailSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+
+class OrderViewSet(viewsets.ModelViewSet):
+    queryset = Order.objects.all().order_by('date')
+    serializer_class = OrderSerializer
     permission_classes = [permissions.IsAuthenticated]
