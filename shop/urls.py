@@ -19,7 +19,8 @@ from rest_framework import routers
 from order_control import views
 
 router = routers.DefaultRouter()
-router.register(r'users', views.UserViewSet)
+router.register(r'user-type', views.UserTypeViewSet)
+router.register(r'user', views.UserViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
