@@ -18,14 +18,8 @@ from django.urls import path, include
 from rest_framework import routers
 from order_control import views
 
-router = routers.DefaultRouter()
-router.register(r'user-type', views.UserTypeViewSet)
-router.register(r'user', views.UserViewSet)
-router.register(r'product', views.ProductViewSet)
-router.register(r'order-detail', views.OrderDetailViewSet)
-router.register(r'order', views.OrderViewSet)
-
 urlpatterns = [
-    path('', include(router.urls)),
+    path('', include('order_control.urls')),
+    path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls'))
 ]
