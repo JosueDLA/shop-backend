@@ -20,6 +20,6 @@ from order_control import views
 
 urlpatterns = [
     path('', include('order_control.urls')),
+    path('', include('account.urls')),
     path('admin/', admin.site.urls),
-    path('api-auth/', include('rest_framework.urls'))
 ]

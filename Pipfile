@@ -9,6 +9,7 @@ verify_ssl = true
 django = "*"
 djangorestframework = "*"
 django-phone-field = "*"
+django-rest-knox = "*"
 
 [requires]
 python_version = "3.8"
